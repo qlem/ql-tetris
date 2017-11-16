@@ -1,14 +1,26 @@
 # Tetris
-Tetris game developed in C language with libcaca for display and SDL_mixer for audio.
 
-## Install
-### You need to Install
-libcaca http://caca.zoy.org/wiki/libcaca
-SDL2 https://www.libsdl.org/
-SDL_mixer https://www.libsdl.org/projects/SDL_mixer/
+Tetris game developed in C with libcaca for display and SDL_mixer for audio.
 
-### Compile
-$> make
+## Screenshot
 
-### Play
-$> ./tetris
+
+
+## Compile
+
+You need to install :
+[libcaca](http://caca.zoy.org/wiki/libcaca)
+[SDL2](https://www.libsdl.org/)
+[SDL_mixer](https://www.libsdl.org/projects/SDL_mixer/)
+
+Then :
+
+```
+./make
+```
+
+## Run
+
+```
+./tetris
+```
