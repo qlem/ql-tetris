@@ -1,6 +1,6 @@
 # Tetris
 
-Tetris game developed in C.
+Tetris game developed in C. Use libcaca for graphics and SDL / SDL_mixer for audio.
 
 ## Screenshot
 
