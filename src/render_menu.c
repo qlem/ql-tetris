@@ -74,13 +74,5 @@ void        render_menu(t_tetris *tetris)
     render_option(tetris, 2, 6);
     render_sub_menu(tetris);
     render_music_option(tetris, 16);
-    render_option(tetris, 4, 18);
-
-    caca_set_attr(tetris->canvas, CACA_ITALICS);
-    caca_put_str(tetris->canvas, 1, 20, "Developed by");
-    caca_set_attr(tetris->canvas, CACA_BOLD);
-    caca_put_str(tetris->canvas, 14, 20, "qlem");
-    caca_unset_attr(tetris->canvas, CACA_BOLD);
-    caca_put_str(tetris->canvas, 19, 20, "- language C - July 2017");
-    caca_unset_attr(tetris->canvas, CACA_ITALICS);
+    render_option(tetris, 4, 19);
 }

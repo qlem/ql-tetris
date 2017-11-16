@@ -7,6 +7,7 @@ Tetris game developed in C with libcaca for display and SDL_mixer for audio.
 ![alt text](https://raw.githubusercontent.com/qlem/Tetris/master/screenshots/start.png)
 ![alt text](https://raw.githubusercontent.com/qlem/Tetris/master/screenshots/game.png)
 ![alt text](https://raw.githubusercontent.com/qlem/Tetris/master/screenshots/over.png)
+![alt text](https://raw.githubusercontent.com/qlem/Tetris/master/screenshots/menu.png)
 
 ## Compile
 
