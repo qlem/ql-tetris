@@ -19,7 +19,7 @@ You need to install :
 Then :
 
 ```
-./make
+make
 ```
 
 ## Run
