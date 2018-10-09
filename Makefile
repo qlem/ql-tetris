@@ -61,7 +61,7 @@ $(OBJ_DIR)/%.o:		$(SRC_DIR)/%.c
 all:		$(NAME)
 
 $(NAME):	$(OBJ)
-	$(CC) -o $(NAME) $(OBJ) -lcaca -lSDL2 -lSDL2_mixer
+	$(CC) -o $(NAME) $(OBJ) -Llib -lcaca -lSDL2 -lSDL2_mixer
 
 clean:
 		$(RM) src/*~ obj/*~ inc/*~ *~

@@ -11,7 +11,7 @@
 #ifndef _TETRIS_H_
 # define _TETRIS_H_
 
-#include <caca.h>
+#include <stdio.h>
 #include <stdbool.h>
 #include <unistd.h>
 #include <stdlib.h>
@@ -21,8 +21,9 @@
 #include <dirent.h>
 #include <fcntl.h>
 #include <sys/stat.h>
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_mixer.h>
+#include "caca/caca.h"
+#include "SDL2/SDL.h"
+#include "SDL2/SDL_mixer.h"
 #include "int_to_str.h"
 
 #define WIDTH 45
