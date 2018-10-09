@@ -11,13 +11,6 @@ Tetris game developed in C. Use libcaca for graphics and SDL / SDL_mixer for aud
 
 ## Compile
 
-You need to install :
-* [libcaca](http://caca.zoy.org/wiki/libcaca)
-* [SDL 2](https://www.libsdl.org/)
-* [SDL_mixer 2](https://www.libsdl.org/projects/SDL_mixer/)
-
-Then :
-
 ```
 make
 ```
@@ -25,5 +18,5 @@ make
 ## Run
 
 ```
-./tetris
+./run.sh
 ```
