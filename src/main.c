@@ -10,12 +10,39 @@
 
 #include "../inc/tetris.h"
 
-void    init_main_struct(t_tetris *tetris)
+char    *getHighScoreFilePath(char **env)
 {
+    int             i;
+    unsigned long   len;
+    char            name[19] = "/.ql_tetris_hscore";
+    char            *path;
+
+    i = -1;
+    path = NULL;
+    while (env[++i] != 0) {
+        if (strncmp("HOME=", env[i], 5) == 0) {
+            len = strlen(env[i]) - 5;
+            path = malloc(sizeof(char) * len + 18);
+            if (path == NULL) {
+                return (NULL);
+            }
+            memcpy(path, &env[i][5], len);
+            memcpy(&path[len], name, strlen(name));
+            path[strlen(path)] = 0;
+            break;
+        }
+    }
+    return (path);
+}
+
+void    init_main_struct(t_tetris *tetris, char *hs_path)
+{
+    tetris->hs_path = hs_path;
     tetris->state = START;
     tetris->event = NO_PRESSED;
     tetris->menu = malloc_pause_menu();
     tetris->v_game = malloc_var_game();
+    tetris->v_game->h_score = load_high_score(hs_path);
     tetris->canvas = caca_create_canvas(WIDTH, HEIGHT);
     tetris->display = caca_create_display(tetris->canvas);
     tetris->timer_core = malloc_timer_core();
@@ -48,12 +75,16 @@ int     game_loop(t_tetris *tetris)
     return (0);
 }
 
-int	    main(void)
+int	    main(int argc, char **argv, char **env)
 {
     t_tetris      tetris;
+    char        *hs_path;
 
+    (void)argc;
+    (void)argv;
     srand((unsigned int)time(NULL));
-    init_main_struct(&tetris);
+    hs_path = getHighScoreFilePath(env);
+    init_main_struct(&tetris, hs_path);
     init_audio(&tetris);
     if (load_tetrimino(&tetris) == 1)
         return (1);

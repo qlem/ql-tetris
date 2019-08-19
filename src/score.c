@@ -4,13 +4,13 @@
 
 #include "../inc/tetris.h"
 
-int     write_new_high_score(long score)
+int     write_new_high_score(long score, char *path)
 {
     int     fd;
     char    *nbr;
     int     i;
 
-    fd = open("h_score.tetris", O_WRONLY | O_CREAT);
+    fd = open(path, O_WRONLY | O_CREAT);
     if (fd == -1)
         return (-1);
     nbr = int_to_str((int)score);
@@ -22,17 +22,17 @@ int     write_new_high_score(long score)
     return (0);
 }
 
-int     load_high_score(void)
+int     load_high_score(char *path)
 {
     struct stat     info;
     int             fd;
     char            *buffer;
     size_t          size;
 
-    fd = open("h_score.tetris", O_RDONLY | O_CREAT, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
+    fd = open(path, O_RDONLY | O_CREAT, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
     if (fd == -1)
         return (0);
-    if (stat("h_score.tetris", &info) == -1)
+    if (stat(path, &info) == -1)
         return (0);
     size = (size_t)info.st_size;
     if (size > 0)

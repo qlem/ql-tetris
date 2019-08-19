@@ -2,5 +2,4 @@ obj/*.o
 h_score.tetris
 tetris
 cmake-build-debug
-CMakeLists.txt
 .idea

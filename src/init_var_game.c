@@ -30,7 +30,7 @@ t_v_game      *malloc_var_game(void)
     if (new == NULL)
         return (NULL);
     new->score = 0;
-    new->h_score = load_high_score();
+    new->h_score = 0;
     new->level = 0;
     new->nb_lines = 0;
     new->nb_tetri = 0;

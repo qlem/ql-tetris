@@ -29,7 +29,7 @@ void    restart_game(t_tetris *tetris)
     set_ref_timer_game(tetris);
     set_ref_time_fall(tetris);
     tetris->v_game->score = 0;
-    tetris->v_game->h_score = load_high_score();
+    tetris->v_game->h_score = load_high_score(tetris->hs_path);
     tetris->v_game->nb_lines = 0;
     tetris->v_game->level = 0;
     tetris->v_game->timer_game->sec = 0;
@@ -40,7 +40,7 @@ void    restart_game(t_tetris *tetris)
 void        end_logic(t_tetris *tetris)
 {
     if (tetris->v_game->score > tetris->v_game->h_score)
-        write_new_high_score(tetris->v_game->score);
+        write_new_high_score(tetris->v_game->score, tetris->hs_path);
     if (tetris->event == ESCAPE && get_timing(tetris, UI))
     {
         Mix_PlayChannel(-1, tetris->audio->sounds[2], 0);

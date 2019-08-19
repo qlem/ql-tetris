@@ -56,5 +56,6 @@ int     free_mem(t_tetris *tetris)
     free_tetrimino_list(tetris);
     free(tetris->v_game);
     free(tetris->timer_core);
+    free(tetris->hs_path);
     return (0);
 }

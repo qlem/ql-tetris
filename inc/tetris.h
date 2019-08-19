@@ -176,6 +176,7 @@ typedef struct          s_tetris
     caca_canvas_t       *canvas;
     t_audio             *audio;
     t_timer_core        *timer_core;
+    char                *hs_path;
 }                       t_tetris;
 
 /*
@@ -199,8 +200,8 @@ t_menu          *malloc_pause_menu(void);
 t_v_game        *malloc_var_game(void);
 
 // Load and write high score
-int             write_new_high_score(long score);
-int             load_high_score(void);
+int write_new_high_score(long score, char *path);
+int load_high_score(char *path);
 
 // Timer game
 void            update_timer_game(t_tetris *tetris);
