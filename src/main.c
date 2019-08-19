@@ -26,9 +26,9 @@ char    *getHighScoreFilePath(char **env)
             if (path == NULL) {
                 return (NULL);
             }
-            memset(path, 0, len + 19);
             memcpy(path, &env[i][5], len);
             memcpy(&path[len], name, 18);
+            path[len + 19] = 0;
             break;
         }
     }
