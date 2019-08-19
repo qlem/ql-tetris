@@ -12,23 +12,23 @@
 
 char    *getHighScoreFilePath(char **env)
 {
-    int             i;
-    unsigned long   len;
-    char            name[19] = "/.ql_tetris_hscore";
-    char            *path;
+    int     i;
+    int     len;
+    char    name[18] = "/.ql_tetris_hscore";
+    char    *path;
 
     i = -1;
     path = NULL;
     while (env[++i] != 0) {
         if (strncmp("HOME=", env[i], 5) == 0) {
-            len = strlen(env[i]) - 5;
-            path = malloc(sizeof(char) * len + 18);
+            len = (int)strlen(env[i]) - 5;
+            path = malloc(sizeof(char) * (len + 19));
             if (path == NULL) {
                 return (NULL);
             }
+            memset(path, 0, len + 19);
             memcpy(path, &env[i][5], len);
-            memcpy(&path[len], name, strlen(name));
-            path[strlen(path)] = 0;
+            memcpy(&path[len], name, 18);
             break;
         }
     }

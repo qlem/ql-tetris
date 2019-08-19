@@ -1,5 +1,4 @@
 obj/*.o
-h_score.tetris
-tetris
 cmake-build-debug
 .idea
+bin/tetris

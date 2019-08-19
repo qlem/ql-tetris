@@ -19,7 +19,7 @@ make
 make install
 ```
 
-For uninstall run
+To uninstall run
 ```
 make uninstall
 ```
