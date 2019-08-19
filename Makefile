@@ -9,9 +9,7 @@
 ##
 
 NAME		:=	tetris
-
 CC		:=	gcc
-
 RM		:=	rm -f
 
 CFLAGS		:=	-W -Wextra -Wall -Werror ## -ansi -pedantic
@@ -19,6 +17,7 @@ CFLAGS		:=	-W -Wextra -Wall -Werror ## -ansi -pedantic
 SRC_DIR		:=	src
 OBJ_DIR		:=	obj
 INC_DIR		:=	inc
+BIN_DIR		:=	bin
 
 SRC		:=	check_rotate.c		\
 			color.c			\
@@ -61,7 +60,13 @@ $(OBJ_DIR)/%.o:		$(SRC_DIR)/%.c
 all:		$(NAME)
 
 $(NAME):	$(OBJ)
-	$(CC) -o $(NAME) $(OBJ) -Llib -lcaca -lSDL2 -lSDL2_mixer
+	$(CC) -o $(BIN_DIR)/$(NAME) $(OBJ) -Llib -lcaca -lSDL2 -lSDL2_mixer
+
+install: 
+	./install.sh
+
+uninstall:
+	./uninstall.sh
 
 clean:
 		$(RM) src/*~ obj/*~ inc/*~ *~
@@ -69,6 +74,6 @@ clean:
 		$(RM) $(OBJ)
 
 fclean:		clean
-		$(RM) $(NAME)
+		$(RM) $(BIN_DIR)/$(NAME)
 
 re:		fclean all

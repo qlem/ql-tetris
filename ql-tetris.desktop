@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Tetris
+Comment=Play Tetris
+Path=/opt/ql-tetris/
+Exec=/opt/ql-tetris/run.sh
+Icon=/opt/ql-tetris/icon.png
+Terminal=false
+Categories=Game;
